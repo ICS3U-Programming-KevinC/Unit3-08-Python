@@ -16,12 +16,15 @@ def main():
     try:
         # checks if the year is evenly divisible by 4
         if int(year) % 4 == 0:
-            # checks if the year is not evenly divisible by 100
-            # and is evenly divisible by 400
-            if not (int(year) % 100 == 0) & int(year) % 400:
-                print("Your year is a leap year")
+            # checks if the year is evenly divisible by 100
+            if int(year) % 100 == 0:
+                # checks if the year is evenly divisible by 400
+                if int(year) % 400:
+                    print("Your year is a leap year")
+                else:
+                    print("Your year is not a leap year")
             else:
-                print("Your year is not a  leap year")
+                print("Your year is a leap year")
         else:
             print("Your year is not a leap year")
     except:
